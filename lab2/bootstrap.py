@@ -7,6 +7,13 @@ import numpy as np
 
 def boostrap(sample, sample_size, iterations):
 	# <---INSERT YOUR CODE HERE--->
+	samples=[]*sample_size
+	data_mean == np.mean(samples)
+	print(mean)
+
+	 []
+	lower = []
+	upper = []
 	return data_mean, lower, upper
 
 
@@ -20,6 +27,7 @@ if __name__ == "__main__":
 		boots.append([i, boot[0], "mean"])
 		boots.append([i, boot[1], "lower"])
 		boots.append([i, boot[2], "upper"])
+		print(boots)
 
 	df_boot = pd.DataFrame(boots, columns=['Boostrap Iterations', 'Mean', "Value"])
 	sns_plot = sns.lmplot(df_boot.columns[0], df_boot.columns[1], data=df_boot, fit_reg=False, hue="Value")
