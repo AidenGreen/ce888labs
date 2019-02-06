@@ -7,18 +7,21 @@ import numpy as np
 
 def boostrap(sample, sample_size, iterations):
 	# <---INSERT YOUR CODE HERE--->
-	samples=[]*sample_size
-	data_mean == np.mean(samples)
-	print(mean)
-
-	 []
-	lower = []
-	upper = []
-	return data_mean, lower, upper
+	samples  = np.random.choice(data,replace = True, size = [iterations, len(data)])
+	#print samples.shape
+	data_mean = data.mean()
+	values = []
+	for sample in samples:
+		#print sample
+		values.append(sample)
+	temp = np.array(values)
+	#print temp
+	lower, upper = np.percentile(temp, [5, 95])
+	return data_mean,lower, upper
 
 
 if __name__ == "__main__":
-	df = pd.read_csv('./salaries.csv')
+	df = pd.read_csv('lab2/salaries.csv')
 
 	data = df.values.T[1]
 	boots = []

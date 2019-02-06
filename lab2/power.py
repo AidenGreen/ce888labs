@@ -13,7 +13,7 @@ def power(sample1, sample2, reps, size, alpha):
         mean1 = np.mean(newSample1)
         mean2 = np.mean(newSample2)
         mean = mean2-mean1
-        if mean > 0:
+        if mean < 1-alpha:
             times += 1
     result = times/reps
     print(result)
@@ -30,4 +30,4 @@ def sampleGenerater(sample,size):
 
 sample1=[0,0,0,0,0,0,1,0,0,1]
 sample2=[0,1,1,1,0,1,1,0,0,1]
-power(sample1,sample2,1000,10,0.05)
+power(sample1,sample2,1000,10,0.2)

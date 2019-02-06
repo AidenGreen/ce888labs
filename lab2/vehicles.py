@@ -17,7 +17,7 @@ def mad(arr):
 
 def readCSV():
 
-    df = pd.read_csv('./vehicles.csv')
+    df = pd.read_csv('lab2/vehicles.csv')
     print(df.columns)
 
     sns_plot = sns.lmplot(df.columns[0], df.columns[1], data=df, fit_reg=False)
